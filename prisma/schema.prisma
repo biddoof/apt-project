@@ -11,5 +11,27 @@ model User {
   id        String   @id @default(cuid())
   username  String   @unique
   password  String
+  streak    Int      @default(0)
+  points    Int      @default(0)
   createdAt DateTime @default(now())
+  progress  UserProgress[]
+}
+
+model Program {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  duration    Int      @default(14)
+  users       UserProgress[]
+}
+
+model UserProgress {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  programId String
+  program   Program  @relation(fields: [programId], references: [id])
+  day       Int      @default(1)
+  completed Boolean  @default(false)
+  updatedAt DateTime @updatedAt
 }
