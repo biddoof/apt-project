@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000;
+  --foreground: #33ff00;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+::selection {
+  background: #33ff00;
+  color: #000000;
+}
+
+a:hover, button:hover {
+  text-shadow: 0 0 5px #33ff00;
+}
+
+input {
+  background: transparent;
+  border: 1px solid #33ff00;
+  color: #33ff00;
+  outline: none;
+}
+input:focus {
+  box-shadow: 0 0 8px #33ff00;
+}
