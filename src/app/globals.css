@@ -18,8 +18,9 @@ body {
   color: #000000;
 }
 
-a:hover, button:hover {
-  text-shadow: 0 0 5px #33ff00;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 input {
@@ -30,4 +31,20 @@ input {
 }
 input:focus {
   box-shadow: 0 0 8px #33ff00;
+}
+.protocol-card:hover {
+  background-color: #33ff00;
+  color: #000000 !important;
+}
+.protocol-card:hover h3,
+.protocol-card:hover p {
+  color: #000000 !important;
+}
+
+.terminal-btn:hover {
+  background-color: #33ff00 !important;
+  color: #000000 !important;
+}
+.terminal-btn:hover * {
+  color: #000000 !important;
 }
