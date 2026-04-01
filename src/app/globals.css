@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #000000;
+  --background: #050a05;
   --foreground: #33ff00;
 }
 
@@ -11,6 +11,23 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* CRT Scanline Overlay */
+body::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 999;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
 }
 
 ::selection {
@@ -32,6 +49,8 @@ input {
 input:focus {
   box-shadow: 0 0 8px #33ff00;
 }
+
+/* Hardcoded UI Overrides */
 .protocol-card:hover {
   background-color: #33ff00;
   color: #000000 !important;
@@ -47,4 +66,16 @@ input:focus {
 }
 .terminal-btn:hover * {
   color: #000000 !important;
+}
+
+/* CRT Screen Glow/Flicker */
+main {
+  animation: flicker 0.15s infinite;
+  text-shadow: 0 0 2px rgba(51, 255, 0, 0.4);
+}
+
+@keyframes flicker {
+  0% { opacity: 0.98; }
+  50% { opacity: 1; }
+  100% { opacity: 0.96; }
 }

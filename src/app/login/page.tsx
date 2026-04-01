@@ -4,12 +4,15 @@ import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { content } from '../../content';
 
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
+  
+  const { login } = content;
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +25,7 @@ export default function Login() {
     });
 
     if (result?.error) {
-      setError('> ERROR: INVALID CREDENTIALS.');
+      setError(login.errorInvalid);
     } else {
       router.push('/dashboard');
     }
@@ -31,13 +34,13 @@ export default function Login() {
   return (
     <main className="min-h-screen p-8 max-w-md mx-auto flex flex-col justify-center">
       <div className="p-6 border border-[#33ff00] bg-black shadow-[0_0_15px_rgba(51,255,0,0.3)]">
-        <h1 className="text-2xl mb-6 uppercase border-b border-[#33ff00] pb-2">&gt; AUTHENTICATION REQUIRED</h1>
+        <h1 className="text-2xl mb-6 uppercase border-b border-[#33ff00] pb-2">{login.header}</h1>
         
         {error && <p className="mb-4 text-red-500 font-bold">{error}</p>}
         
         <form onSubmit={handleLogin} className="space-y-6">
           <div className="flex flex-col gap-2">
-            <label htmlFor="username" className="uppercase text-sm">&gt; IDENTIFIER (USERNAME)</label>
+            <label htmlFor="username" className="uppercase text-sm">{login.labelUsername}</label>
             <input 
               type="text" 
               id="username" 
@@ -50,7 +53,7 @@ export default function Login() {
           </div>
           
           <div className="flex flex-col gap-2">
-            <label htmlFor="password" className="uppercase text-sm">&gt; PASSCODE</label>
+            <label htmlFor="password" className="uppercase text-sm">{login.labelPassword}</label>
             <input 
               type="password" 
               id="password" 
@@ -66,13 +69,13 @@ export default function Login() {
             type="submit"
             className="terminal-btn w-full py-3 mt-4 border border-[#33ff00] uppercase font-bold tracking-widest transition-colors"
           >
-            [ SUBMIT CREDENTIALS ]
+            {login.btnSubmit}
           </button>
         </form>
 
         <div className="mt-6 pt-4 border-t border-[#33ff00] text-center">
           <Link href="/" className="terminal-btn px-4 py-1 text-sm hover:underline opacity-80 border border-transparent">
-            &lt; ABORT AND RETURN TO TERMINAL
+            {login.btnAbort}
           </Link>
         </div>
       </div>

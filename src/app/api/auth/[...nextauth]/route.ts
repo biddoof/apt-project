@@ -29,7 +29,7 @@ export const authOptions = {
     })
   ],
   callbacks: {
-    async session({ session, token }) {
+    async session({ session, token }: any) {
       if (session.user) {
         session.user.name = token.name;
         // @ts-ignore
