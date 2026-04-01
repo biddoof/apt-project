@@ -5,12 +5,12 @@ export const content = {
   },
   landing: {
     subtitle: "> Connection established...",
-    welcomeHeader: "Hey, glad you found this.",
-    welcomeBody: "I used to be a personal trainer before the network went down. Gyms are gone and the world's a mess, but we still need to stay sharp to survive. I got this old server running to share some routines you can do using scrap metal, heavy packs, and whatever else you have lying around. Choose a track:",
+    welcomeHeader: "Juice here (RIP Toya)",
+    welcomeBody: "Hey fam, it's Juice. My girl Toya is with the angels but I found a gym with a working server so I'm BACK. Time to get ripped so we can flip the script on those bony-assed bots. So find some water, shoes and grab some scrap metal and let's do this.  Create an account and choose 2 Week track:",
     welcomeList: [
-      "Look Great While You Survive",
-      "Healthy Body Healthy Mental",
-      "Combat Readiness"
+      "Fitness Track: Scatter, Scavenge, Look Amazing",
+      "Wellness Track: Tune ur Gut and Mental",
+      "Combat Track: David v. Goliath for Real"
     ],
     btnLogin: "[ Log In ]",
     btnDashboard: "[ Go to Dashboard ]"
@@ -24,7 +24,7 @@ export const content = {
     errorInvalid: "Error: Wrong username or password."
   },
   dashboard: {
-    header: "APT Dashboard",
+    header: "Juice: Apocalypse Trainer Dashboard",
     statusOnline: "Logged in as: ",
     btnLogout: "[ Log Out ]",
     systemWarning: "Notice: ",
