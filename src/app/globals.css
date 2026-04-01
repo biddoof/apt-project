@@ -1,10 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #050a05;
-  --foreground: #33ff00;
+  --background: #9bbc0f;
+  --foreground: #0f380f;
 }
 
 body {
@@ -15,24 +16,22 @@ body {
   min-height: 100vh;
 }
 
-/* CRT Scanline Overlay */
+/* Game Boy Dot Matrix Overlay */
 body::after {
   content: " ";
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  top: 0; left: 0; bottom: 0; right: 0;
+  background:
+    repeating-linear-gradient(0deg, rgba(15, 56, 15, 0.05) 0, rgba(15, 56, 15, 0.05) 1px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(90deg, rgba(15, 56, 15, 0.05) 0, rgba(15, 56, 15, 0.05) 1px, transparent 1px, transparent 3px);
   z-index: 999;
-  background-size: 100% 2px, 3px 100%;
   pointer-events: none;
 }
 
 ::selection {
-  background: #33ff00;
-  color: #000000;
+  background: #0f380f;
+  color: #9bbc0f;
 }
 
 a {
@@ -42,40 +41,27 @@ a {
 
 input {
   background: transparent;
-  border: 1px solid #33ff00;
-  color: #33ff00;
+  border: 1px solid #0f380f;
+  color: #0f380f;
   outline: none;
 }
 input:focus {
-  box-shadow: 0 0 8px #33ff00;
+  box-shadow: 4px 4px 0px rgba(15, 56, 15, 0.2);
 }
 
-/* Hardcoded UI Overrides */
 .protocol-card:hover {
-  background-color: #33ff00;
-  color: #000000 !important;
+  background-color: #0f380f;
+  color: #9bbc0f !important;
 }
 .protocol-card:hover h3,
 .protocol-card:hover p {
-  color: #000000 !important;
+  color: #9bbc0f !important;
 }
 
 .terminal-btn:hover {
-  background-color: #33ff00 !important;
-  color: #000000 !important;
+  background-color: #0f380f !important;
+  color: #9bbc0f !important;
 }
 .terminal-btn:hover * {
-  color: #000000 !important;
-}
-
-/* CRT Screen Glow/Flicker */
-main {
-  animation: flicker 0.15s infinite;
-  text-shadow: 0 0 2px rgba(51, 255, 0, 0.4);
-}
-
-@keyframes flicker {
-  0% { opacity: 0.98; }
-  50% { opacity: 1; }
-  100% { opacity: 0.96; }
+  color: #9bbc0f !important;
 }

@@ -18,7 +18,7 @@ export const authOptions = {
         if (!credentials?.username || !credentials?.password) return null;
         
         const user = await prisma.user.findUnique({
-          where: { username: credentials.username }
+          where: { username: credentials.username.toLowerCase() }
         });
 
         if (user && await bcrypt.compare(credentials.password, user.password)) {

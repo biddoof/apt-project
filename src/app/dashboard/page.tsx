@@ -1,8 +1,8 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 import { PrismaClient } from "@prisma/client";
 import { redirect } from "next/navigation";
 import DashboardClient from "./DashboardClient";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 const prisma = new PrismaClient();
 
@@ -23,7 +23,20 @@ export default async function Dashboard() {
     }
   });
 
+  if (!user) { redirect("/api/auth/signout"); }
+
   const programs = await prisma.program.findMany();
 
-  return <DashboardClient user={user} programs={programs} />;
+  let todayWorkout = null;
+  if (user?.progress?.[0]) {
+    const active = user.progress[0];
+    todayWorkout = await prisma.dailyWorkout.findFirst({
+      where: {
+        programId: active.programId,
+        dayNumber: active.day
+      }
+    });
+  }
+
+  return <DashboardClient user={user} programs={programs} todayWorkout={todayWorkout} />;
 }

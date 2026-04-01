@@ -1,43 +1,43 @@
 export const content = {
   global: {
-    appTitle: "[ APT // OUTPOST 04 MAINFRAME ]",
-    footer: "SYSTEM v0.9b // HOST: SCAVENGED RIG #412 // CONNECTION: SECURE VLF"
+    appTitle: "[ APT // Apocalypse Personal Trainer ]",
+    footer: "APT v1.0 // Hosted locally // Stay safe out there"
   },
   landing: {
-    subtitle: "> INITIATING SURVIVAL PROTOCOLS... SIGNAL DEGRADED...",
-    welcomeHeader: "> Welcome, Survivor.",
-    welcomeBody: "The old world is ash. The Robotai won the opening salvo, but we're still breathing. I salvaged this server to keep our encampment sharp. If you can read this, you're not humanity's last stand—you're its future. Prepare yourself:",
+    subtitle: "> Connection established...",
+    welcomeHeader: "Hey, glad you found this.",
+    welcomeBody: "I used to be a personal trainer before the network went down. Gyms are gone and the world's a mess, but we still need to stay sharp to survive. I got this old server running to share some routines you can do using scrap metal, heavy packs, and whatever else you have lying around. Choose a track:",
     welcomeList: [
-      "Evasion Stamina Protocol",
-      "Rationing & Psychological Fortitude",
-      "Robotai Melee & Perimeter Defense"
+      "Look Great While You Survive",
+      "Healthy Body Healthy Mental",
+      "Combat Readiness"
     ],
-    btnLogin: "[ Establish Secure Handshake ]",
-    btnDashboard: "[ Access Local Mainframe ]"
+    btnLogin: "[ Log In ]",
+    btnDashboard: "[ Go to Dashboard ]"
   },
   login: {
-    header: "> AUTHENTICATION REQUIRED // NO BOTS ALLOWED",
-    labelUsername: "> IDENTIFIER (CALLSIGN)",
-    labelPassword: "> ENCRYPTED PASSCODE",
-    btnSubmit: "[ TRANSMIT CREDENTIALS ]",
-    btnAbort: "< ABORT AND BURN FREQUENCY",
-    errorInvalid: "> ERROR: SIGNAL REJECTED. CHECK CIPHER."
+    header: "> Log In (Humans Only)",
+    labelUsername: "Username",
+    labelPassword: "Password",
+    btnSubmit: "[ Submit ]",
+    btnAbort: "< Go Back",
+    errorInvalid: "Error: Wrong username or password."
   },
   dashboard: {
-    header: "> APT_DASHBOARD // SECURE",
-    statusOnline: "LINK: STABLE // CALLSIGN: ",
-    btnLogout: "[ SEVER CONNECTION ]",
-    systemWarning: "> HAZARD ALERT: ",
-    vitalsHeader: "> VITALS & TELEMETRY",
-    streakLabel: "SURVIVAL STREAK:",
-    activeProgramLabel: "ACTIVE PROTOCOL:",
-    noneLabel: "UNASSIGNED",
-    pointsLabel: "REQUISITION PTS:",
-    protocolProgressHeader: "Protocol Execution",
-    dayLabel: "Cycle",
+    header: "APT Dashboard",
+    statusOnline: "Logged in as: ",
+    btnLogout: "[ Log Out ]",
+    systemWarning: "Notice: ",
+    vitalsHeader: "Your Stats",
+    streakLabel: "Current Streak:",
+    activeProgramLabel: "Active Routine:",
+    noneLabel: "None selected",
+    pointsLabel: "Total Points:",
+    protocolProgressHeader: "Routine Progress",
+    dayLabel: "Day",
     ofLabel: "of",
-    btnCompleteDaily: "[ TRANSMIT ENCRYPTED PING ]",
-    availableProtocolsHeader: "> AVAILABLE FIELD GUIDES (14-CYCLE)",
-    btnStart: "[ INITIATE ]"
+    btnCompleteDaily: "[ Log Today's Workout ]",
+    availableProtocolsHeader: "Available Routines (14-Day)",
+    btnStart: "[ Start ]"
   }
 };

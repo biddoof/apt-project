@@ -33,8 +33,8 @@ export default function Login() {
 
   return (
     <main className="min-h-screen p-8 max-w-md mx-auto flex flex-col justify-center">
-      <div className="p-6 border border-[#33ff00] bg-black shadow-[0_0_15px_rgba(51,255,0,0.3)]">
-        <h1 className="text-2xl mb-6 uppercase border-b border-[#33ff00] pb-2">{login.header}</h1>
+      <div className="p-6 border border-[#0f380f] bg-transparent shadow-[6px_6px_0px_rgba(15,56,15,0.3)]">
+        <h1 className="text-2xl mb-6 uppercase border-b border-[#0f380f] pb-2">{login.header}</h1>
         
         {error && <p className="mb-4 text-red-500 font-bold">{error}</p>}
         
@@ -67,13 +67,13 @@ export default function Login() {
 
           <button 
             type="submit"
-            className="terminal-btn w-full py-3 mt-4 border border-[#33ff00] uppercase font-bold tracking-widest transition-colors"
+            className="terminal-btn w-full py-3 mt-4 border border-[#0f380f] uppercase font-bold tracking-widest transition-colors"
           >
             {login.btnSubmit}
           </button>
         </form>
 
-        <div className="mt-6 pt-4 border-t border-[#33ff00] text-center">
+        <div className="mt-6 pt-4 border-t border-[#0f380f] text-center">
           <Link href="/" className="terminal-btn px-4 py-1 text-sm hover:underline opacity-80 border border-transparent">
             {login.btnAbort}
           </Link>

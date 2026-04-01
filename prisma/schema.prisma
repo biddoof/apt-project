@@ -23,6 +23,16 @@ model Program {
   description String
   duration    Int      @default(14)
   users       UserProgress[]
+  workouts    DailyWorkout[]
+}
+
+model DailyWorkout {
+  id          String   @id @default(cuid())
+  programId   String
+  program     Program  @relation(fields: [programId], references: [id])
+  dayNumber   Int
+  title       String
+  instructions String
 }
 
 model UserProgress {

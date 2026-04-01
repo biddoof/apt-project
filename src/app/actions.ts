@@ -2,8 +2,8 @@
 
 import { PrismaClient } from "@prisma/client";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
 import { revalidatePath } from "next/cache";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
 const prisma = new PrismaClient();
 
